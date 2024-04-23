@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
@@ -31,6 +33,15 @@ public class Principal {
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar Lost: " + lost.getDuracaoEmMinutos());
 
+        var halo = new Serie();
+        halo.setNome("Halo");
+        halo.setTemporadas(2);
+        halo.setMinutosPorEpisodio(55);
+        halo.setTemporadas(8);
+        halo.setAnoDeLancamento(2022);
+        System.out.println("Duração para maratonar Halo" + halo.getDuracaoEmMinutos());
+
+
         Filme outroFilme = new Filme();
         outroFilme.setNome("Avatar");
         outroFilme.setAnoDeLancamento(2023);
@@ -50,5 +61,29 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+
+
+        var filmeDoPaulo = new Filme();
+        filmeDoPaulo.setDuracaoEmMinutos(200);
+        filmeDoPaulo.setAnoDeLancamento(2003);
+        filmeDoPaulo.setNome("Dogville");
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(filmeDoPaulo);
+
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro Filme: " +listaDeFilmes.get(0));
+        System.out.println(listaDeFilmes);
+
+        ArrayList<Serie> listaDeSeries = new ArrayList<>();
+        listaDeSeries.add(halo);
+        listaDeSeries.add(lost);
+
+        System.out.println("Tamanho da lista: " + listaDeSeries.size());
+        System.out.println("Comprimento da lista: " + listaDeSeries.toArray().length);
+        System.out.println(listaDeSeries);
+
     }
 }
