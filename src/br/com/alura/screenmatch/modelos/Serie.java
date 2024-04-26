@@ -48,7 +48,7 @@ public class Serie extends Titulo {
     }
 
     public String toString(){
-        return "Nome da série: " + getNome() + "(" + getAnoDeLancamento() + ")";
+        return "Nome da série: " + this.getNome() + "(" + this.getAnoDeLancamento() + ")";
     }
 
 }
